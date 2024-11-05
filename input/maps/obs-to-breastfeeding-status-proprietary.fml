@@ -1,0 +1,49 @@
+map "http://jembi.org/fhir/StructureMap/ObservationToProprietaryBreastfeedingStatus" = "ObservationToProprietaryBreastfeedingStatus"
+
+/// status = 'draft'
+
+uses "http://jembi.org/fhir/StructureDefinition/breastfeeding-status-observation" as source
+uses "http://jembi.org/fhir/StructureDefinition/BreastfeedingStatusProprietaryLogicalModel" as target
+
+
+group ObservationToProprietaryBreastfeedingStatus(source src : Observation, target tgt : BreastfeedingStatusProprietaryLogicalModel) {
+    src.status as status -> tgt.observationStatus = status "SetObservationStatus";
+
+    src.code as codeableConcept then {
+        codeableConcept.coding as coding then {
+            coding.code as code -> tgt.code = code "SetObservationCode";
+        };
+    };
+
+    src.effective as authored -> tgt.date = authored "SetObservationEffectiveDateTime";
+
+    src.subject as subject then {
+        subject.extension as extension where (url = 'http://jembi.org/fhir/StructureDefinition/source-system-resource-reference') then {
+            extension.value : string as val then { 
+                val -> tgt.patient = val "SetObservationSubjectReference";
+            };
+        };
+     }; 
+
+    src.performer as performer then {
+        performer.extension as extension where (url = 'http://jembi.org/fhir/StructureDefinition/source-system-resource-reference') then {
+            extension.value : string as val then { 
+                val -> tgt.performer = val "SetObservationPerformerReference";
+            };
+        };
+    };
+
+    src.encounter as encounter then {
+        encounter.extension as extension where (url = 'http://jembi.org/fhir/StructureDefinition/source-system-resource-reference') then {
+            extension.value : string as val then { 
+                val -> tgt.encounter = val "SetObservationEncounterReference";
+            };
+        };
+    };
+
+    src.value : CodeableConcept as codeableConcept then {
+        codeableConcept.coding as coding then {
+            coding.code as code -> tgt.breastFeedingStatus = code "SetObservationValueCodingCode";
+        };
+    };
+}

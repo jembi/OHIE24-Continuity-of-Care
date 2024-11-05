@@ -1,0 +1,13 @@
+{
+  "name": "jembi.fhir.template",
+  "version": "0.0.1",
+  "date": "2024-10-23",
+  "type": "fhir.template",
+  "license": "CC0-1.0",
+  "description": "Jembi FHIR Template",
+  "author": "https://www.jembi.org/",
+  "base": "fhir.base.template",
+  "dependencies": {
+      "fhir.base.template": "current"
+    }
+}
