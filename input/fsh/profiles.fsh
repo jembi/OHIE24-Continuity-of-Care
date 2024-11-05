@@ -169,6 +169,7 @@ Description: "Represents the patient's Viral Load Result."
 * effectiveDateTime 1..1
 * valueQuantity 1..1
 * valueQuantity = $UCUM_UNIT#1/mL
+* valueQuantity.unit 1..1
 * valueQuantity.unit = "copies/mL"
 * subject 1..1
 * subject only Reference(HIVPatient)
@@ -192,17 +193,14 @@ Description: "Represents the service request for PCR HIV testing."
 * encounter only Reference(TargetFacilityEncounter)
 
 * requester 1..1
-* requester only Reference(GeneralPractitioner)
+* requester only Reference(ServiceProvider or GeneralPractitioner)
 
 * performer 1..1
 * performer only Reference(ServiceProvider or GeneralPractitioner)
 
-* locationReference 0..* MS
-  * ^definition =
-    "reason(s) why this should be supported."
-* locationReference only Reference(ProvidersLocation)
-
 * authoredOn 1..1
+
+* priority 1..1
 
 Profile: ViralLoadDiagnosticReport
 Parent: DiagnosticReportUvIps
