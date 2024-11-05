@@ -11,7 +11,9 @@ Description: "Organization providing health related services."
     HIN 1..1
 * identifier[HIN]
   * value 1..1
-  * system = "http://ohie.org/fhir/identifier/hin"
+  * system = $HIN
+
+* active 1..1
 
 Profile: GeneralPractitioner
 Parent: PractitionerUvIps
