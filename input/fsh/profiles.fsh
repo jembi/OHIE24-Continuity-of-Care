@@ -9,8 +9,10 @@ Description: "Organization providing health related services."
 
 * identifier contains
     HIN 1..1
+
 * identifier[HIN]
   * value 1..1
+  * system 1..1
   * system = $HIN
 
 * active 1..1
@@ -51,7 +53,8 @@ Description: "Represents the physical location of the provider."
     "reason(s) why this should be supported."
 * identifier[LocationID]
   * value 1..1
-  * system = "http://ohie.org/fhir/identifier/provider-location"
+  * system 1..1
+  * system = $ProviderLocation
 
 * name 1..1
 * status 1..1
@@ -82,29 +85,34 @@ Description: "Is used to document demographics and other administrative informat
 
 * identifier[PPN]
   * value 1..1
-  * system = "http://ohie.org/fhir/identifier/passport"
+  * system 1..1
+  * system = $Passport
 
 * identifier[Drivers] 
   * ^definition =
     "reason(s) why this should be supported."
   * value 1..1
-  * system = "http://ohie.org/fhir/identifier/drivers"
+  * system 1..1
+  * system = $Drivers
 
 * identifier[SCN] 
   * ^definition =
     "reason(s) why this should be supported."
   * value 1..1
-  * system = "http://ohie.org/fhir/identifier/scn"
+  * system 1..1
+  * system = $SCN
 
 * identifier[NIC]
   * ^definition =
     "reason(s) why this should be supported."
   * value 1..1
-  * system = "http://ohie.org/fhir/identifier/nic"
+  * system 1..1
+  * system = $NIC
 
 * identifier[PHN]
   * value 1..1
-  * system = "http://ohie.org/fhir/identifier/phn"
+  * system 1..1
+  * system = $PHN
 
 * name 1..*
   * given 1..*
