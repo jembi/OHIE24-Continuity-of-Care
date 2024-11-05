@@ -208,7 +208,7 @@ Id: viral-load-diagnostic-report
 Title: "Diagnostic Report - Viral Load"
 Description: "Represents the results for viral load."
 * category = $LNC#11502-2
-* code = $LNC#25836-8 //$SCT#315124004
+* code = $LNC#25836-8
 * result[observation-results] 1..1
 * result[observation-results] only Reference(ViralLoadResultObservation)
 * basedOn 1..1
