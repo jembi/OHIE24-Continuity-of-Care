@@ -41,3 +41,15 @@ Description:
 * telecom[+].system = #email
 * telecom[=].value = "someone@something.org"
 * telecom[=].use = #home
+
+Instance: GeneralEncounterExample
+InstanceOf: TargetFacilityEncounter
+Usage: #example
+Title: "Encounter - Facility A"
+Description: "Represents the current facility at which the patient is receiving health services."
+* class = $ActCodeV3CodeSystem#AMB
+* status = #finished
+* subject = Reference(PatientExample1)
+* period.start = "2012-12-09"
+* period.end = "2012-12-09"
+* serviceProvider = Reference(CurrentServiceProviderExample1)

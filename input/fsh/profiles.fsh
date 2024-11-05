@@ -33,13 +33,7 @@ Description: "Represents the current facility at which the patient is receiving 
 * subject 1..1
 * subject only Reference(HIVPatient)
 * period 1..1
-* location 0..* MS
-  * ^definition =
-    "reason(s) why this should be supported."
-  * location 1..1
-  * location only Reference(ProvidersLocation)
-* participant 1..*
-  * individual 1..1
+* serviceProvider only Reference(ServiceProvider)
 
 Profile: ProvidersLocation
 Parent: Location
