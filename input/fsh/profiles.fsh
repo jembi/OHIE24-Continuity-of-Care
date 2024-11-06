@@ -72,6 +72,20 @@ Parent: PatientUvIps
 Id: hiv-patient
 Title: "Patient"
 Description: "Is used to document demographics and other administrative information about an HIMS or HHIMS individual receiving care or other health-related services."
+* meta 1..1
+* meta.security 1..*
+
+* insert Slice(meta.security, reasons why this should be supported, value, code, open, Slicing meta.security based on the code value, false)
+
+* meta.security contains
+    Restricted 1..1
+
+* meta.security[Restricted] 1..1
+* meta.security[Restricted].code 1..1
+* meta.security[Restricted].code = #R
+* meta.security[Restricted].system 1..1
+* meta.security[Restricted].system = $ConfidentialityV3CodeSystem
+
 * identifier 1..*
 
 * insert Slice(identifier, reasons why this should be supported, value, system, open, Slicing the identifier based on the system value, false)
@@ -165,6 +179,20 @@ Parent: ObservationResultsLaboratoryUvIps
 Id: viral-load-count-observation
 Title: "Observation - Viral Load Result"
 Description: "Represents the patient's Viral Load Result."
+* meta 1..1
+* meta.security 1..*
+
+* insert Slice(meta.security, reasons why this should be supported, value, code, open, Slicing meta.security based on the code value, false)
+
+* meta.security contains
+    VeryRestricted 1..1
+
+* meta.security[VeryRestricted] 1..1
+* meta.security[VeryRestricted].code 1..1
+* meta.security[VeryRestricted].code = #V
+* meta.security[VeryRestricted].system 1..1
+* meta.security[VeryRestricted].system = $ConfidentialityV3CodeSystem
+
 * code = $SCT#315124004
 * effectiveDateTime 1..1
 * valueQuantity 1..1
@@ -181,6 +209,20 @@ Parent: ServiceRequest
 Id: vl-service-request
 Title: "Service Request - PCR HIV Test"
 Description: "Represents the service request for PCR HIV testing."
+* meta 1..1
+* meta.security 1..*
+
+* insert Slice(meta.security, reasons why this should be supported, value, code, open, Slicing meta.security based on the code value, false)
+
+* meta.security contains
+    Normal 1..1
+
+* meta.security[Normal] 1..1
+* meta.security[Normal].code 1..1
+* meta.security[Normal].code = #N
+* meta.security[Normal].system 1..1
+* meta.security[Normal].system = $ConfidentialityV3CodeSystem
+
 * code 1..1
 * code = $LNC#9836-8
 * category 1..1
@@ -207,6 +249,20 @@ Parent: DiagnosticReportUvIps
 Id: viral-load-diagnostic-report
 Title: "Diagnostic Report - Viral Load"
 Description: "Represents the results for viral load."
+* meta 1..1
+* meta.security 1..*
+
+* insert Slice(meta.security, reasons why this should be supported, value, code, open, Slicing meta.security based on the code value, false)
+
+* meta.security contains
+    VeryRestricted 1..1
+
+* meta.security[VeryRestricted] 1..1
+* meta.security[VeryRestricted].code 1..1
+* meta.security[VeryRestricted].code = #V
+* meta.security[VeryRestricted].system 1..1
+* meta.security[VeryRestricted].system = $ConfidentialityV3CodeSystem
+
 * category = $LNC#11502-2
 * code = $LNC#25836-8
 * result[observation-results] 1..1

@@ -13,3 +13,4 @@ Alias: $ActCodeV3CodeSystem = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias: $ParticipationTypeV3CodeSystem = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
 Alias: $ConsentActionCodeSystem = http://terminology.hl7.org/CodeSystem/consentaction
 Alias: $ConsentScopeCodeSystem = http://terminology.hl7.org/CodeSystem/consentscope
+Alias: $ConfidentialityV3CodeSystem = http://terminology.hl7.org/CodeSystem/v3-Confidentiality
