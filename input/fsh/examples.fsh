@@ -24,6 +24,19 @@ Description: "An organization providing health related services."
 * address[=].state = "Addis Ababa"
 * address[=].district = "Arada"
 
+Instance: CurrentServiceProviderExample3
+InstanceOf: ServiceProvider
+Usage: #example
+Title: "Organization - Facility C"
+Description: "An organization providing health related services."
+* identifier[HIN].value = "facilityC"
+* active = true
+* name = "Facility C"
+* address[+].line[+] = "Kabele"
+* address[=].city = "Dessie"
+* address[=].state = "Addis Ababa"
+* address[=].district = "Arada"
+
 Instance: GeneralPractitionerExample
 InstanceOf: GeneralPractitioner
 Usage: #example
@@ -210,8 +223,8 @@ Description: "Represents the patient's consent to NOT have their HIV status disc
 Instance: HIVStatusConsentDenied2
 InstanceOf: HIVStatusConsent
 Usage: #example
-Title: "Consent - Patient Does Not Consent to Sharing HIV Information Outside of Facility A Except With Facility B - Read Only Access"
-Description: "Represents the patient's consent to NOT share and have their PHI (HIV data) further accessed by any organization other than \"Facility A\" (Custodian) and \"Facility B\" (Secondary Use)."
+Title: "Consent - Patient Does Not Consent to Sharing HIV Information Outside of Facility A Except With Facility C - Read Only Access"
+Description: "Represents the patient's consent to NOT share and have their PHI (HIV data) further accessed by any organization other than \"Facility A\" (Custodian) and \"Facility C\" (Secondary Use)."
 * status = #active
 * scope = $ConsentScopeCodeSystem#patient-privacy
 * category = $ActCodeV3CodeSystem#INFAO
@@ -227,7 +240,7 @@ Description: "Represents the patient's consent to NOT share and have their PHI (
     * reference = Reference(CurrentServiceProviderExample1)
   * actor[+]
     * role = $ParticipationTypeV3CodeSystem#PRCP
-    * reference = Reference(CurrentServiceProviderExample2)
+    * reference = Reference(CurrentServiceProviderExample3)
   * action[+] = $ConsentActionCodeSystem#access
   * data[+]
     * meaning = #dependents
