@@ -29,7 +29,6 @@
     <li><a href="package.r4.tgz">R4 NPM Package</a></li>
   </ul>
 
-  <p>The source code for this Implementation Guide can be found on <a href="https://github.com/jembi/Starter-FHIR-IG">GitHub</a>.</p>
 Cross Version Analysis
   <h3>Cross Version Analysis</h3> <a name="cross-version-analysis"></a>
   <div>
