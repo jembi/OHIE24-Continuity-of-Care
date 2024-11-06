@@ -180,8 +180,8 @@ Description: "Represents the patient's consent to share and have their PHI (HIV 
     * start = "2024-01-25"
     * end = "2024-05-25"
   * data[+]
-    * meaning = #instance
-    * reference = Reference(RoutineViralLoadDiagnosticReportExample)
+    * meaning = #dependents
+    * reference = Reference(ViralLoadServiceRequest)
 
 Instance: HIVStatusConsentDenied1
 InstanceOf: HIVStatusConsent
@@ -204,8 +204,8 @@ Description: "Represents the patient's consent to NOT have their HIV status disc
   * action[+] = $ConsentActionCodeSystem#access
   * action[+] = $ConsentActionCodeSystem#correct
   * data[+]
-    * meaning = #instance
-    * reference = Reference(RoutineViralLoadDiagnosticReportExample)
+    * meaning = #dependents
+    * reference = Reference(ViralLoadServiceRequest)
 
 Instance: HIVStatusConsentDenied2
 InstanceOf: HIVStatusConsent
@@ -230,5 +230,5 @@ Description: "Represents the patient's consent to NOT share and have their PHI (
     * reference = Reference(CurrentServiceProviderExample2)
   * action[+] = $ConsentActionCodeSystem#access
   * data[+]
-    * meaning = #instance
-    * reference = Reference(RoutineViralLoadDiagnosticReportExample)
+    * meaning = #dependents
+    * reference = Reference(ViralLoadServiceRequest)

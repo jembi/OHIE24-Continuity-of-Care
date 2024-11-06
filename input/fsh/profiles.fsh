@@ -136,8 +136,8 @@ Description: "Is used to document demographics and other administrative informat
 Profile: HIVStatusConsent
 Parent: Consent
 Id: hiv-status-consent
-Title: "Consent - HIV Status"
-Description: "Represents the patient's consent to have their HIV status disclosed."
+Title: "Consent"
+Description: "Represents the patient's consent to have parts of their PHI disclosed."
 * ^experimental = true
 * ^status = #draft
 * patient 1..1
